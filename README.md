@@ -3,6 +3,8 @@ List of small components written in python, that helps you to ease the task.
 
 ## List of components
 * Dataset Splitter - Splits Dataset in Train, Test and Validation Dataset Randomly (80:10:10) ratio
+* CSV Generator - Generates a CSV file from Pascal VOC dataset.
+* TFRecord Generator - Generates TFRecord from CSV file of Pascal VOC dataset.
 
 ## Usage
 
@@ -50,3 +52,21 @@ images.zip
 !python DatasetSplitter.py
 ```
 
+* ### CSV Generator & TFRecord Generator
+
+Once you have your dataset ready, execute these script to generate the CSV file from Pascal VOC dataset and create a TFRecord file from it.
+
+1. Get the scripts.
+
+```
+!wget https://raw.githubusercontent.com/MasoomBadi/DatasetHelper/main/CSVGenerator.py
+!wget https://raw.githubusercontent.com/MasoomBadi/DatasetHelper/main/TFRecordGenerator.py
+```
+
+2. Run the files to create a TFRecord.
+
+```
+!python3 CSVGenerator.py
+!python3 TFRecordGenerator.py --csv_input=images/train_labels.csv --labelmap=labelmap.txt --image_dir=images/train --output_path=train.tfrecord
+!python3 TFRecordGenerator.py --csv_input=images/validation_labels.csv --labelmap=labelmap.txt --image_dir=images/validation --output_path=val.tfrecord
+```
