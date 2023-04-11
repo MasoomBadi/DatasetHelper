@@ -56,14 +56,29 @@ images.zip
 
 Once you have your dataset ready, execute these script to generate the CSV file from Pascal VOC dataset and create a TFRecord file from it.
 
-1. Get the scripts.
+
+1. (Optional) If you don't yet have the labelmap.txt file ready, you can run script from below to create it.
+
+labelmap.txt contains the list of classes that are used in your dataset, each in a new line.
+
+```
+%%bash
+cat <<EOF >> /content/labelmap.txt
+Class1
+Class2
+Class3
+Class4
+EOF
+```
+
+2. Get the scripts.
 
 ```
 !wget https://raw.githubusercontent.com/MasoomBadi/DatasetHelper/main/CSVGenerator.py
 !wget https://raw.githubusercontent.com/MasoomBadi/DatasetHelper/main/TFRecordGenerator.py
 ```
 
-2. Run the files to create a TFRecord.
+3. Run the files to create a TFRecord.
 
 ```
 !python3 CSVGenerator.py
