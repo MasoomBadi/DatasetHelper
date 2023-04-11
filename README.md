@@ -11,5 +11,5 @@ List of small components written in python, that helps you to ease the task.
 1. Import the DatabsetSplitter.py file
 
 ```
-  !wget https://github.com/MasoomBadi/DatasetHelper/blob/main/DatasetSplitter.py
+!wget https://github.com/MasoomBadi/DatasetHelper/blob/main/DatasetSplitter.py
 ```
