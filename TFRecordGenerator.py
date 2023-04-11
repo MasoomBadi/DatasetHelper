@@ -7,6 +7,24 @@ Created on Wed Apr 12 00:20:22 2023
 # Script to create TFRecord files from train and test dataset folders
 # Prerequisite: Make sure you have the seperate CSV files ready for each dataset (Train, Test Dataset)
 
+from __future__ import division
+from __future__ import print_function
+from __future__ import absolute_import
+
+import os
+import io
+import pandas as pd
+
+from tensorflow.python.framework.versions import VERSION
+if VERSION >= "2.0.0a0":
+    import tensorflow.compat.v1 as tf
+else:
+    import tensorflow as tf
+
+from PIL import Image
+from object_detection.utils import dataset_util
+from collections import namedtuple, OrderedDict
+
 """
 labelmap
     
@@ -32,24 +50,6 @@ How to Use:
   python generate_tfrecord.py --csv_input=images/test_labels.csv  --image_dir=images/test --output_path=test.record
 
 """
-
-from __future__ import division
-from __future__ import print_function
-from __future__ import absolute_import
-
-import os
-import io
-import pandas as pd
-
-from tensorflow.python.framework.versions import VERSION
-if VERSION >= "2.0.0a0":
-    import tensorflow.compat.v1 as tf
-else:
-    import tensorflow as tf
-
-from PIL import Image
-from object_detection.utils import dataset_util
-from collections import namedtuple, OrderedDict
 
 flags = tf.app.flags
 flags.DEFINE_string('csv_input', '', 'Path to the CSV input')
