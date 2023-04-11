@@ -27,7 +27,7 @@ images.zip
 !mkdir /content/images
 ```
 
-2. (Optional) Unzip if your dataset is in zip compressed folder.
+2. (Optional) Unzip if your dataset is in zip compressed folder. (Note: If you have unzipped dataset, make sure all your files are in '/images/all' directory)
 
 ```
 !unzip -q images.zip -d /content/images/all
